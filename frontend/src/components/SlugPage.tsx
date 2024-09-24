@@ -1,6 +1,6 @@
 import { CircularProgress, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getUrl } from "../api";
 
 export const SlugPage = () => {
@@ -43,6 +43,7 @@ export const SlugPage = () => {
       <Typography variant="body1" sx={{ color: "error.main" }}>
         {error}
       </Typography>
+      <Link to="/">Go back to the home page</Link>
     </Stack>
   );
 };
