@@ -68,3 +68,4 @@ I also added one unit test to verify the http/https url validation
 
 - I used copilot for basic syntax agnostic stuff
 - I used claude to fix a CORS issue I was having
+- I used some online resources to help me set up the starter node projects
