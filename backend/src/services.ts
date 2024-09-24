@@ -10,6 +10,11 @@ export type CreateSlugOutput = {
   slug: string;
 }
 
+/**
+ * Creates a slug for a given URL.
+ * @param input The URL to create a slug for
+ * @returns The slug
+ */
 export const createSlug = (input: CreateSlugInput) => {
   const url = input?.url;
   if (!url) {
@@ -33,6 +38,11 @@ export type GetUrlOutput = {
   url: string;
 }
 
+/**
+ * Gets the URL for a given slug.
+ * @param slug The slug to get the URL for
+ * @returns The URL
+ */
 export const getUrl = (slug: unknown) => {
   if (typeof slug !== "string") {
     throw new ClientError("slug must be a string");

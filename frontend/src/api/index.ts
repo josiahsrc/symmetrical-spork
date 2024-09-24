@@ -8,6 +8,10 @@ type SuccessResult<R> = { type: "success"; data: R };
 type ErrorResult = { type: "error"; message: string };
 export type Result<R> = SuccessResult<R> | ErrorResult;
 
+/**
+ * Standardize the response handling for all API calls. Use type unioning
+ * so that callers don't have to worry about handling the error case.
+ */
 async function handleResponse<R>(response: Response): Promise<Result<R>> {
   if (!response.ok) {
     const error = await response.json();
@@ -23,6 +27,9 @@ export type CreateSlugOutput = {
   slug: string;
 }
 
+/**
+ * Creates a slug for a given URL.
+ */
 export const createSlug = async (url: string) => {
   console.log("URL", buildUrl("/create"));
   const result = await fetch(
@@ -43,6 +50,9 @@ export type GetUrlOutput = {
   url: string;
 }
 
+/**
+ * Gets the URL for a given slug.
+ */
 export const getUrl = async (slug: string) => {
   const result = await fetch(buildUrl(`/${slug}`), {
     method: "GET",

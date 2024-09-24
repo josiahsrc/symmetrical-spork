@@ -13,6 +13,10 @@ import { createSlug } from "../api";
 import { ContentCopy } from "@mui/icons-material";
 import { formatSlug } from "../utils/slug";
 
+/**
+ * The main part of the app. Handles communicating with the backend,
+ * displaying slugs, and copying them to the clipboard.
+ */
 export const HomePage = () => {
   const [inputUrl, setInputUrl] = useState("");
   const [canSubmit, setCanSubmit] = useState(false);

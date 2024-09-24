@@ -8,6 +8,7 @@ export const SlugPage = () => {
 
   const [error, setError] = useState("");
 
+  // Redirect to the URL for the given slug. If the slug isn't found, display an error.
   useEffect(() => {
     const inner = async () => {
       if (!slug) {
